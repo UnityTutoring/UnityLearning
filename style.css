@@ -1,63 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 body{
-	background-color: #091a28;
-	color: #cdcdcd;
+	font-family: "Playfair Display", serif;
+	  font-optical-sizing: auto;
+	  font-weight: <weight>;
+	  font-style: normal;
+	  font-size:18px;
+	  background-color:#0B3A45;
+	margin:0;
 }
-
-
 header{
-	width: 100%;
-	height: 90px;
-	background-color: #0e2638;
+	width:100%;
+	margin:0;
+	position:relative;
 }
-.MainHeaderContent{
-	height: 93%;
-	background-color: #0e2638;
+header nav{
+	color:white;
+	display:flex;
+	background-color:#0B3A45;
+	border-top:2px solid #65A4B2 ;
+	border-bottom:5px solid #65A4B2 ;
+	padding:2%;
+	align-items:center;
 }
-.MainHeaderUnderLine{
-	width: 100%;
-	height: 7%;
-	background-color: #4a5c6a;
+ul{
+	width:100%;
+	display:flex;
+	justify-content:space-evenly;
 }
-
-
-content{
-	width: 100%;
-	height: 1080px;
-	background-color: #ffffff;
+header nav img{
+	width:5%;
 }
-.MainIntro{
-	height: 810px;
-	background-color: #293b49;
-}
-.IntroBlock{
-	margin: 10%;
-	font-family: "Times New Roman 14";
-	font-size: 30px;
-}
-.MainContent{
-	height: 3200px;
-	background-color: #0789b6;
-}
-.MainHelpInfo{
-	height: 600px;
-	background-color: #e1e1e1;
-}
-.MainAboutInfo{
-	height: 850px;
-	background-color: #414e59;
+nav ul{
+	list-style:none;
 }
 
+nav ul li{
+	display:inline-block;
+	padding:2px;
+	border-top:2px solid rgba(255,255,255,0);
+	border-bottom:2px solid rgba(255,255,255,0);
+	transition:1s linear;
+}
+nav ul li:hover{
+	border-top:2px solid rgba(255,255,255,0.7);
+	border-bottom:2px solid rgba(255,255,255,0.7);
+}
+nav a{
+	text-decoration:none;
+	color:white;
+}
+.mainlogo{
+	background-image:linear-gradient(#4D8F9D,#105464 ,#0B3A45);
+	padding:5% 7% 10% 7%;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-evenly;
+	align-items:center;
+	color:white;
+	text-align:center;
+}
+.mainlogo h1{
+	font-size: 3em;
+}
+.mainlogo h1 span{
+	background: linear-gradient(135deg, #F1780E 33%, #EA47D9 66%, #970EF1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0, 0.5);
+}
+.mainlogo h3{
+	color:#DEDBDE;
+}
 
-footer{
-	width: 100%;
-	height: 470px;
-	background-color: #2f2f2f;
+.fon{
+	position:absolute;
+	background-color:#0B3A45;
+	width:100%;
+	height:15vh;
+	bottom:0;
+	left:0;
+	border-radius:50% 50% 0 0;
 }
-.MainFooterContent{
-	height: 400px;
-	background-color: #2f2f2f;
+.main{
+	background-color:#0B3A45;
 }
-.MainFooterCopyright{
-	height: 220px;
-	background-color: #494949;
+
+main h1{
+	text-align:center;
+	color:white;
+	font-size:1.5em;
+	
+}
+main h3{
+	color: #F1780E ;
+	text-align:center;
+	position:relative;
+}
+
+.categories div{
+	color:white;
+	padding:3% 20%;
+	display:flex;
+	justify-content:space-around;
+	flex-wrap:wrap;
+}
+
+.categories article{
+	background-color:rgba(222, 219, 222, 0.3);
+	box-shadow:0 0 3px 3px rgba(0,0,0,0.3);
+	padding:2% 5%;
+	text-align:center;
+	width:20%;
+	border-radius: 5px;
+	border:2px solid rgba(255,255,255,0.1);
+	margin-bottom:3%;
+	transition:1s linear;
+}
+.categories img{
+	width:80%;
+}
+.categories h2{
+	font-size:0.8em;
+}
+.categories article:hover{
+	box-shadow:0 0 3px 5px rgba(0,0,0,0.7);
+	background-color:rgba(222, 219, 222, 0.5);
 }
