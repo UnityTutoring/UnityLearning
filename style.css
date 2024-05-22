@@ -5,7 +5,7 @@ body{
 	  font-optical-sizing: auto;
 	  font-weight: <weight>;
 	  font-style: normal;
-	  font-size:18px;
+	  font-size:20px;
 
 }
 
@@ -23,7 +23,12 @@ header nav{
 	border-bottom:5px solid #65A4B2 ;
 	padding:3% 0 ;
 	align-items:center;
+	justify-content:space-evenly;
 	width:100%;
+}
+nav article{
+	margin-left:3%;
+	font-size:2em;
 }
 ul{
 	width:100%;
@@ -69,6 +74,8 @@ nav a{
 	background-image: linear-gradient(45deg,  #F1780E 33%, #EA47D9 66%, #970EF1);
 	transition:1s linear;
 	margin:3%;
+	color:white;
+	letter-spacing:3%;
 }
 .registr:hover{
 	box-shadow:inset 2px 2px 5px 0 rgba(255,255,255,0.5), 2px 2px 5px 0 rgba(0,0,0,0.5);
@@ -138,7 +145,7 @@ main h3{
 	padding:2% 0;
 }
 
-.post{
+.post {
 	width:30%;
 	background-color:rgba(17, 85, 100 , 0.5 );
 	border-radius:5px;
@@ -146,6 +153,7 @@ main h3{
 	overflow:hidden;
 	box-shadow:0 0 3px 2px rgba(0,0,0,0.3);
 	transition:1s linear;
+	
 	
 }
 .post img{
@@ -178,6 +186,9 @@ main h3{
 	display:flex;
 	align-items:center;
 }
+.email p{
+	color:#0B3A45;
+}
 .email img{
 	width:65%;
 }
@@ -187,6 +198,9 @@ main h3{
 	flex-direction:column;
 	justify-content:space-around;
 	align-items:center;
+}
+.email . registr{
+	color:white;
 }
 .dev{
 	padding:3% 7%;
@@ -258,7 +272,10 @@ nav label:hover{
     border: 1px solid white;
 }
 
-
+.categories a{
+	text-decoration:none;
+	color:white;
+}
 
 
 
@@ -361,5 +378,6 @@ nav label:hover{
 		align-items:flex-start;
 	}
 }
+
 
 
