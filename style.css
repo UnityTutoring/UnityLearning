@@ -15,57 +15,108 @@ header{
 	position:relative;
 	
 }
-header nav{
+.header{
 	color:white;
 	display:flex;
 	background-color:#0B3A45;
 	border-top:2px solid #65A4B2 ;
 	border-bottom:5px solid #65A4B2 ;
-	padding:3% 0 ;
+	padding:3% 0;
 	align-items:center;
-	justify-content:space-evenly;
+	justify-content:space-around;
 	width:100%;
+	z-index:2;
 }
-nav article{
+.header article{
 	margin-left:3%;
 	font-size:2em;
+    width:25%;
+    display:flex;
+	align-items:center;
 }
-ul{
+.menu{
+    display:flex;
+	width:100%;
+
+   
+}
+.menu nav{
+	width:100%;
+}
+.menu ul{
 	width:100%;
 	display:flex;
 	justify-content:space-evenly;
+    list-style:none;
 }
-header nav img{
-	width:10%;
-}
-header article{
-	display:flex;
-	align-items:center;
-}
-nav ul{
-	list-style:none;
+.header img{
+	width:50px;
 }
 
-nav ul li{
-	display:inline-block;
+
+
+.menu ul li{
+	
 	padding:2px;
 	border-top:2px solid rgba(255,255,255,0);
 	border-bottom:2px solid rgba(255,255,255,0);
 	transition:1s linear;
 	
 }
-nav ul li:hover{
+.menu ul li:hover{
 	border-top:2px solid rgba(255,255,255,0.7);
 	border-bottom:2px solid rgba(255,255,255,0.7);
 }
-nav a{
+.menu a{
 	text-decoration:none;
 	color:white;
+	font-size:1.5em;
+}
+.burger{
+    display:none;
+    
+    position:relative;
+    z-index:50;
+    align-items:center;
+    justify-content:center;
+    width:30px;
+    height:18px;
 }
 
+.burger span{
+    height:2px;
+    width:70%;
+    transform:scale(1);
+    background-color:white;
+}
+.burger::before, .burger::after{
+    content:'';
+    position:absolute;
+    height:2px;
+    width:100%;
+    background-color:white;
+    transition:all 0.3s linear;
+}
 
+.burger::before{
+    top:0;
+}
+.burger::after{
+    bottom:0;
+}
 
+.burger.active span{
+    transform:scale(0);
+}
+.burger.active::before{
+    top:50%;
+    transform:rotate(-45deg) translate(0, -50%);
+}
 
+.burger.active::after{
+    top:50%;
+    transform:rotate(45deg) translate(0, -50%);
+}
 .registr{
 	text-decoration:none;
 	font-weight:900;
@@ -256,20 +307,13 @@ footer p a:hover{
 }
 
 
-input[type="checkbox"] {
-    display: none;
 
-}
 nav label {    
     display: none;
     border: 1px solid transparent;   
     padding: 5px 10px;
     cursor: pointer;
     transition: 0.3s;
-}
-nav label:hover{
-    color: white;
-    border: 1px solid white;
 }
 
 .categories a{
@@ -279,8 +323,40 @@ nav label:hover{
 
 
 
-
 @media screen and (max-width: 1000px) {
+    
+    .burger{display:flex;}
+
+	.menu{
+		position:fixed;
+		
+		width:95.2%;
+		top:100px;
+		padding:15px;
+		background-color:#0B3A45;
+		transform:translateX(-1000px);
+		transition:transform 0.5s;
+		z-index:0;
+		
+	}
+	.menu ul {
+		display:flex;
+		flex-direction:column;
+		justify-content:space-evenly;
+		align-items:center;
+		
+	}
+	.menu li{
+		margin-bottom:2%;
+	}
+    .menu.active{
+		transform:translateX(0);
+		
+	}
+
+     .header{
+		 z-index:1;
+	 } 
 	footer{
 		justify-content:space-between;
 		padding:3% 7% 3%  7%;
@@ -289,27 +365,8 @@ nav label:hover{
 		width:35%;
 		
 	}
-    nav{
-		display:flex;
-		justify-content:space-between;
-		align-items:center;
-		flex-direction:column;
-	}
-    nav label{
-         display: inline-block;
-		
-		
-    }
 
-    nav  ul {
-        display: none;
-    }
-    input[type="checkbox"]:checked ~ ul {
-        display:flex;
-		flex-direction:column;
-		align-items:center;
-		
-    }
+
 	body{
 		font-size:16px;
 	}
@@ -378,6 +435,5 @@ nav label:hover{
 		align-items:flex-start;
 	}
 }
-
 
 
