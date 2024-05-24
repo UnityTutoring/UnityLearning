@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test WebSite</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" href="https://upload.wikimedia.org/wikipedia/ru/a/a3/Unity_Logo.png">
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<header>
+			<div class="header">
+				<article>
+					<img src="https://upload.wikimedia.org/wikipedia/ru/a/a3/Unity_Logo.png">
+					<span><b>gamedev</b>begginer</span>
+					
+				</article>
+				<div class="menu">
+					<nav>
+						<ul>
+							<li><a href="">Unity Tutorials</a></li>
+							<li><a href="">Courses</a></li>
+							<li><a href="">About</a></li>
+							<li><a href="">News</a></li>
+						</ul>
+					</nav>
+					</div>
+                <div class="burger">
+                    <span></span>
+                </div>
+                
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<img class="post-fon" src="https://gamedevbeginner.com/wp-content/uploads/Camera-Relative-Movement.png"/>
+				<h1>How to create Camera Relative movement in Unity</h1>
+				<p class="date">In Input, Movement by John French / Updated 22 May 2024</p>
+				<p>It can be quite straightforward to move an object in world space meaning that its forward direction, for example, is the same as forward in the world.</p>
+				<p>Likewise, it’s also fairly simple to move an object relative to itself, where forward means whichever way the object happens to be facing.</p>
+				<p>However, how can you create movement that is relative to a different object?</p>
+				<p>Such as the camera, for example.</p>
+				<p>Camera relative movement means that an upwards input might mean moving away from the camera’s view, while a downwards input might mean moving towards the screen.</p>
+				<p>In Unity, it’s possible to create camera relative movement by using the camera’s forward vector in place of the object’s.</p>
+				<p><b>Like this:</b></p>
+				<pre>
+					<code>
+Transform cam;
+public float speed = 2;
+
+private void Start()
+{
+    cam = Camera.main.transform;
+}
+
+void Update()
+{
+    Vector3 forwardMovement = cam.forward * Input.GetAxis("Vertical");
+    Vector3 horizontalMovement = cam.right * Input.GetAxis("Horizontal");
+
+    Vector3 movement = Vector3.ClampMagnitude(forwardMovement + horizontalMovement, 1);
+    transform.Translate(movement * speed * Time.deltaTime, Space.World);
+}
+					</code>
+				</pre>
+			</section>
+			
+			
+			
+			
+			<section class="aside">
+				<article>
+				<h2>WELCOME TO MY BLOG</h2>
+				<img class="foto" src="https://gamedevbeginner.com/wp-content/uploads/jlf-headshot.jpg"/>
+				</article>
+				<article>
+				<p>I’m John, a professional game composer and audio designer.</p>
+				<p> I’m also a keen amateur developer and love learning how to make games. More about me</p>
+				</article>
+				<a  class="registr" href="">REGISTRATION</a>
+			</section>
+		</main>
+		<footer>
+			<div>
+				<h2><img src="https://upload.wikimedia.org/wikipedia/ru/a/a3/Unity_Logo.png">
+				gamedevbegginer</h2>
+	
+				<p>
+					In-depth game <br>development tutorials<br> and resources for <br>beginners.
+				</p>
+				
+			</div>
+			
+			<div>
+			<h2>Resources</h2>
+			<p><a>Unity Tutorials</a></p>
+			<p><a>Unity Tutorials</a></p>
+			<p><a>Unity Tutorials</a></p>
+			<p><a>Unity Tutorials</a></p>
+			</div>
+			
+			<div>
+			<h2>Resources</h2>
+			<p><a>Unity Tutorials</a></p>
+			<p><a>Unity Tutorials</a></p>
+			<p><a>Unity Tutorials</a></p>
+			<p><a>Unity Tutorials</a></p>
+			</div>
+			
+			
+		</footer>
+        <script src="script.js" ></script>
+	</body>
+</html>
