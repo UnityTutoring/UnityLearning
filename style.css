@@ -6,7 +6,7 @@ body{
 	  font-weight: <weight>;
 	  font-style: normal;
 	  font-size:20px;
-
+	margin:0;
 }
 
 header{
@@ -41,7 +41,7 @@ header{
    
 }
 .menu nav{
-	width:100%;
+	width:90%;
 }
 .menu ul{
 	width:100%;
@@ -145,7 +145,7 @@ main{
 	align-items:center;
 	color:white;
 	text-align:center;
-
+	
 }
 .mainlogo h1{
 	font-size: 3em;
@@ -186,6 +186,8 @@ main h3{
 }
 .categories{
 	padding:3% 5%;
+	background-color:#0B3A45;
+	border-radius:70px 70px 0 0;
 }
 .posts{
 	display:flex;
@@ -211,6 +213,7 @@ main h3{
 	width:100%;
 	transition:1s linear;
 }
+
 .data{
 	display:flex;
 	justify-content:space-around;
@@ -326,23 +329,34 @@ nav label {
 @media screen and (max-width: 1000px) {
     
     .burger{display:flex;}
-
+	.header {
+		position:fixed;
+		top:0;
+	}
+	.header article{
+		z-index:1;
+		
+	}
 	.menu{
 		position:fixed;
-		
-		width:95.2%;
-		top:100px;
-		padding:15px;
+		left:0;
+		width:100%;
+		top:50px;
 		background-color:#0B3A45;
-		transform:translateX(-1000px);
+		transform:translateY(-100vh);
 		transition:transform 0.5s;
 		z-index:0;
+		padding-top:3%;
 		
+	}
+
+	main.active{
+		top:20%;
 	}
 	.menu ul {
 		display:flex;
 		flex-direction:column;
-		justify-content:space-evenly;
+		justify-content:center;
 		align-items:center;
 		
 	}
@@ -350,13 +364,17 @@ nav label {
 		margin-bottom:2%;
 	}
     .menu.active{
-		transform:translateX(0);
+		transform:translateY(1vh);
 		
 	}
-
-     .header{
-		 z-index:1;
-	 } 
+	.mainlogo{
+		padding-top:75px;
+		transition:0.5s;
+	}
+	.mainlogo.active{
+		padding-top:70%;
+	}
+    
 	footer{
 		justify-content:space-between;
 		padding:3% 7% 3%  7%;
@@ -404,8 +422,16 @@ nav label {
 
 @media screen and (max-width: 500px) {
 	body{
-		font-size:14px;
+		font-size:12px;
 	}
+    .header span{
+        font-size:1em;
+    }
+    .header{
+        justify-content:space-between;
+        padding:0 1%;
+        width:98%;
+    }
 	.posts{
 		justify-content:space-evenly;
 	}
