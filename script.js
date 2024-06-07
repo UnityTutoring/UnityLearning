@@ -5,3 +5,11 @@ menuBtn.addEventListener('click', ()=>{
 	menu.classList.toggle('active');
 
 })
+let main = document.querySelector('.mainlogo');
+menuBtn.addEventListener('click', ()=>{
+	menuBtn.classList.toggle('active');
+	main.classList.toggle('active');
+
+})
+
+
